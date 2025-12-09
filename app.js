@@ -56,3 +56,14 @@ function publishRandomData() {
         }
     });
 }
+
+const server = http.createServer((req, res) => {
+    res.writeHead(200);
+    res.end('Aplikasi MQTT Publisher sedang berjalan...');
+});
+
+const webPort = process.env.PORT || 3000;
+
+server.listen(webPort, () => {
+    console.log(`Server HTTP dummy berjalan di port ${webPort}`);
+});
